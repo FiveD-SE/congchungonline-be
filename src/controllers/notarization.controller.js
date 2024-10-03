@@ -1,6 +1,7 @@
 const httpStatus = require('http-status');
 const catchAsync = require('../utils/catchAsync');
 const { notarizationService, emailService } = require('../services');
+const mongoose = require('mongoose');
 
 // Utility function to validate email format
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -55,6 +56,14 @@ const getHistoryByUserId = catchAsync(async (req, res) => {
 // Controller function to get document status by document ID
 const getDocumentStatus = catchAsync(async (req, res) => {
   const { documentId } = req.params;
+  // Kiểm tra nếu documentId không phải là ObjectId hợp lệ
+  if (!mongoose.Types.ObjectId.isValid(documentId)) {
+    return res.status(httpStatus.NOT_FOUND).json({
+      code: httpStatus.NOT_FOUND,
+      message: 'Notarizations does not exist in document',
+    });
+  }
+
 
   const status = await notarizationService.getDocumentStatus(documentId);
 

@@ -275,11 +275,24 @@ router.route('/getApproveHistory').get(auth('getApproveHistory'), notarizationCo
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Notarizations'
- *       "401":
- *         $ref: '#/components/responses/Unauthorized'
- *       "403":
- *         $ref: '#/components/responses/Forbidden'
+ *               type: object
+ *               properties:
+ *                 _id:
+ *                   type: string
+ *                   example: "66f52c4e4df9701becbf1c57"
+ *                 documentId:
+ *                   type: string
+ *                   example: "66f52c4d4df9701becbf1c53"
+ *                 status:
+ *                   type: string
+ *                   example: "pending"
+ *                 updatedAt:
+ *                   type: string
+ *                   format: date-time
+ *                   example: "2024-09-26T09:41:34.790Z"
+ *                 __v:
+ *                   type: integer
+ *                   example: 0
  *       "404":
  *         $ref: '#/components/responses/NotFound'
  *       "500":
