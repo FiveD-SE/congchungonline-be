@@ -93,7 +93,7 @@ const loginWithGoogle = catchAsync(async (req, res) => {
     }
   }
 
-  res.send({ user, tokens });
+  res.redirect(`${process.env.CLIENT_URL}?token=${tokens.access.token}&refreshToken=${tokens.refresh.token}`);
 });
 
 module.exports = {

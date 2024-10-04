@@ -8,6 +8,7 @@ const roleRoute = require('./role.route');
 const notarizationFieldRoute = require('./notarizationField.route');
 const notarizationServiceRoute = require('./notarizationService.route');
 const config = require('../../config/config');
+const adminRoute = require('./admin.route');
 // const { path } = require('../../app');
 
 const router = express.Router();
@@ -41,6 +42,10 @@ const defaultRoutes = [
   {
     path: '/notarizationServices',
     route: notarizationServiceRoute,
+  },
+  {
+    path: '/admin/metrics',
+    route: adminRoute,
   },
 ];
 

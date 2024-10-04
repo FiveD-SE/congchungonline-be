@@ -7,3 +7,4 @@ module.exports.chatbotService = require('./chatbot.service');
 module.exports.roleService = require('./role.service');
 module.exports.notarizationFieldService = require('./notarizationField.service');
 module.exports.notarizationServiceService = require('./notarizationService.service');
+module.exports.adminService = require('./admin.service');
