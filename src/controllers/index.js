@@ -6,3 +6,4 @@ module.exports.roleController = require('./role.controller');
 module.exports.notarizationFieldController = require('./notarizationField.controller');  // Sửa lỗi chính tả
 module.exports.notarizationServiceController = require('./notarizationService.controller');
 module.exports.adminController = require('./admin.controller');
+module.exports.sessionCotroller = require('./session.controller');
