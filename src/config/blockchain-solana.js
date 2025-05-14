@@ -26,7 +26,7 @@ const associatedTokenProgramID = new PublicKey(process.env.ASSOCIATED_TOKEN_PROG
 const pinata = new PinataSDK(process.env.PINATA_API_KEY, process.env.PINATA_SECRET_KEY);
 
 // Initialize wallet signer
-const walletKeypair = getKeypair(process.env.PRIVATE_KEY);
+const walletKeypair = getKeypair(process.env.WALLET_PRIVATE_KEY);
 const signer = new Wallet(walletKeypair);
 
 // Initialize Solana connection
