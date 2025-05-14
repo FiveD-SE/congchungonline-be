@@ -8,7 +8,7 @@ const { bucket, downloadFile } = require('../config/firebase');
 const RequestSignature = require('../models/requestSignature.model');
 const { payOS } = require('../config/payos');
 const Payment = require('../models/payment.model');
-const { uploadToIPFS, mintDocumentNFT, getTransactionData } = require('../config/blockchain');
+const { uploadToIPFS, mintDocumentNFT, getTransactionData } = require('../config/blockchain-solana'); // changed from blockchain.js to blockchain-solana.js
 const userWalletService = require('./userWallet.service');
 
 const generateOrderCode = () => {

@@ -1,0 +1,54 @@
+{
+  "version": "0.1.0",
+  "name": "trustify_anchor",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        { "name": "authority", "isMut": true, "isSigner": true },
+        { "name": "trustedForwarder", "isMut": false, "isSigner": false },
+        { "name": "programData", "isMut": true, "isSigner": false },
+        { "name": "systemProgram", "isMut": false, "isSigner": false },
+        { "name": "rent", "isMut": false, "isSigner": false }
+      ],
+      "args": [
+        { "name": "name", "type": "string" },
+        { "name": "symbol", "type": "string" }
+      ]
+    },
+    {
+      "name": "mintNft",
+      "accounts": [
+        { "name": "signer", "isMut": true, "isSigner": true },
+        { "name": "trustedForwarder", "isMut": false, "isSigner": false },
+        { "name": "programData", "isMut": true, "isSigner": false },
+        { "name": "mint", "isMut": true, "isSigner": true },
+        { "name": "tokenAccount", "isMut": true, "isSigner": false },
+        { "name": "recipient", "isMut": false, "isSigner": false },
+        { "name": "metadata", "isMut": true, "isSigner": false },
+        { "name": "mintAuthority", "isMut": false, "isSigner": false },
+        { "name": "tokenMetadataProgram", "isMut": false, "isSigner": false },
+        { "name": "tokenProgram", "isMut": false, "isSigner": false },
+        { "name": "associatedTokenProgram", "isMut": false, "isSigner": false },
+        { "name": "systemProgram", "isMut": false, "isSigner": false },
+        { "name": "rent", "isMut": false, "isSigner": false }
+      ],
+      "args": [{ "name": "tokenUri", "type": "string" }]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "ProgramData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "authority", "type": "publicKey" },
+          { "name": "trustedForwarder", "type": "publicKey" },
+          { "name": "name", "type": "string" },
+          { "name": "symbol", "type": "string" },
+          { "name": "tokenCounter", "type": "u64" }
+        ]
+      }
+    }
+  ]
+}
